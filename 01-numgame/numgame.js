@@ -9,9 +9,10 @@ const max = document.getElementById("max");
 const brSetUp2 = document.getElementById("brSetUp2");
 const start = document.getElementById("start");
 const lblGuess = document.getElementById("lblGuess");
+const btnGuess = document.getElementById("btnGuess");
 
-let MINNUM = 0;
-let MAXNUM = 100;
+let MINNUM = document.getElementById("min");
+let MAXNUM = document.getElementById("max");
 let secret;
 
 var myConfetti = confetti.create(null, {
@@ -29,7 +30,7 @@ function loadGame() {
     secret += MINNUM;
     secret = Math.floor(secret);
 }
-function startGame(){
+function startGame(){ 
     lblSetMin.style.display = "none"
     min.style.display = "none"
     brSetUp1.style.display = "none"
@@ -37,13 +38,25 @@ function startGame(){
     max.style.display = "none"
     brSetUp2.style.display = "none"
     start.style.display = "none"
-
+    guess.style.display = "inline"
+    lblGuess.style.display = "inline"
+    btnGuess.style.display = "inline"
+    loadGame()
 }
 function resetGame(){
     document.body.style.backgroundColor = "rgb(241, 115, 11)"
     report.innerHTML = "Report"
     reset.style.visibility = "hidden"
-    loadGame()
+    lblSetMin.style.display = "inline"
+    min.style.display = "inline"
+    brSetUp1.style.display = "inline"
+    lblSetMax.style.display = "inline"
+    max.style.display = "inline"
+    brSetUp2.style.display = "inline"
+    start.style.display = "inline"
+    guess.style.display = "none"
+    lblGuess.style.display = "none"
+    btnGuess.style.display = "none"
 }
 
 function makeGuess() {

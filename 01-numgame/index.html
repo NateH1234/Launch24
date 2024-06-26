@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="numgame.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
-<body onload = "loadGame()"> <!-- do something onload -->
+<body> <!-- do something onload -->
     <h1>Number Guessing Game</h1>
     <p>Rules: <br>
         Set Min and Max numbers<br>
@@ -23,9 +23,9 @@
     <input id = "max" type = "number">
     <br id = "brSetUp2">
     <button id = "start" onclick = "startGame()">Start</button>
-    <label id = "lblGuess">Your guess: </label>
-    <input id = "guess" type = "number">
-    <button id = "btnGuess" onclick = "makeGuess()">Guess</button>
+    <label id = "lblGuess" class = "guess">Your guess: </label>
+    <input id = "guess" class = "guess" type = "number">
+    <button id = "btnGuess" class = "guess" onclick = "makeGuess()">Guess</button>
     <br>
     <p id = "report">Report</p>
     <button id = "reset" onclick = "resetGame()">Reset</button>
