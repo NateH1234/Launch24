@@ -14,7 +14,8 @@
         Set Min and Max numbers<br>
         Guess a Number between the two<br>
         The Report will give hints<br>
-        Keep going until you get the secret number!<br>
+        But you may have the Report lie to you sometimes >:]<br>
+        Keep going until you get the Secret Number!<br>
     </p>
     <label id = "lblSetMin">Set Min: </label>
     <input id = "min" type = "number">
@@ -22,6 +23,9 @@
     <label id = "lblSetMax">Set Max: </label>
     <input id = "max" type = "number">
     <br id = "brSetUp2">
+    <label id = "lblSetLie">Lie Chance (%): </label>
+    <input id = "lie" type = "number" min = 0 max = 100>
+    <br id = "brSetUp3">
     <button id = "start" onclick = "startGame()">Start</button>
     <label id = "lblGuess" class = "guess">Your guess: </label>
     <input id = "guess" class = "guess" type = "number">
