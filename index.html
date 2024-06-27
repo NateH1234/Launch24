@@ -1,70 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Homepage</title>
-    <meta name="generator" content="thesitewizard.com's Layout Wizard 4.0.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="tswnavbar.css">
-    <style>
-    h1{
-      color: rgb(30, 50, 90);
-    }
-      p{
-        color: green;
-      }
-      #tswsideproper{
-      background-color: rgb(255, 230, 230);
-      height: 600px;
-      width: 100px;
-    }
-    body{
-      background-color: gray;
-    }
-  </style>
-    <link type="text/css" rel="stylesheet" href="tswnavbar.css">
-  </head>
-  <body>
-    <div id="tswcontainer">
-      <div id="tswheader">
-        <!-- start of header section: insert your logo, etc, here --> <img src="arno-senoner-MRjjcDIk3Gw-unsplash.jpg"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate Pong</title>
+    <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+    <h1>NATE PONG</h1>
+    <canvas id="gameboard" width="500" height="500"></canvas>
+    <div id="scoreboard">0 : 0</div>
+    <button id="reset" onclick="resetGame()">RESET</button>
+    <br />
+    <input type="checkbox" id="cpucheck">
+    <label>CPU Play</label>
 
-          alt="Some Random Logo on Unsplash" style="width: 98px; height: 65px;">
-        <p>&nbsp;</p>
-        <!-- end of header section: insert your logo, etc, above this line --> </div>
-      <div id="tswcontent">
-        <div id="tswcontproper">
-          <!-- start of content column: insert your content here -->
-          <h1>My Website</h1>
-          <p>This is my Website, you can learn all about me using the items on
-            the left column. You want to know my story? Well, it's very, very sad. It all started when I was born at a very young age back in 6/4/08. "June 4th or April 6th?" That's what's so sad about it, no one knows except me and anyone who knows me! "actually, I would be able to figure out the format of the date by simply figuring out where you live" Yeah but ain't no way you could figure that out- *receives whispers* -oh, dang, hopefully no one realizes that. Yes I know I already referenced the navigation bar but hopefully they don't notice. Anyways, my story continues; seconds after my birth, or minutes, rather, or hours, I made- wait no, days? I mean weeks, or months, like 6 months, or years, like 14 or 15, oh wait no 16 years, I made this website.</p>
-            <a href = ".\01-numgame\">Link to my Number Game</a>
-            <br>
-          <img src="sincerely-media-3KEFp35FVB0-unsplash.jpg" alt="Thumbs up"
-
-            style="width: 400px; height: 200px;">
-          <!-- end of content column: put your content above this line --> </div>
-      </div>
-      <div id="tswsidecol">
-        <div id="tswsideproper">
-          <!-- start of side column: insert your navigation menu, etc, here -->
-          <div id="tswcssbuttons">
-            <ul>
-              <li><a href="index.html">Homepage</a></li>
-              <li><a href="hobbies.html">Hobbies</a></li>
-              <li><a href="hometown.html">Hometown</a></li>
-            </ul>
-          </div>
-          <!-- end of side column: put your navigation menu, etc, above this line -->
-        </div>
-      </div>
-      <div style="clear: both;"></div>
-      <div id="tswfooter">
-        <!-- start of footer section: insert your copyright notice, etc, here -->
-        <p> </p>
-        <!-- end of footer section: insert your copyright notice, etc, above this line -->
-      </div>
-    </div>
-  </body>
+    <script src="Ball.js"></script>
+    <script src="Paddle.js"></script>
+    <script src="pong.js"></script>
+    <script src="controls.js"></script>
+</body>
 </html>
