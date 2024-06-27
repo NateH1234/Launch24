@@ -42,8 +42,16 @@ function resetGame() {
 }
 
 function resetPaddles() {
-    paddleL = new Paddle(0, 0, paddleLength, paddleWidth, "rgb(255, 75, 50)");
-    paddleR = new Paddle(boardWidth - paddleWidth, 0, paddleLength, paddleWidth, "rgb(30,120,255)");
+    if (scoreL > 15) {
+        paddleL = new Paddle(0, boardHeight / 2 - 40, paddleLength - 30, paddleWidth, "rgb(255, 75, 50)");
+    } else {
+        paddleL = new Paddle(0, boardHeight / 2 - 40, paddleLength - scoreL * 2, paddleWidth, "rgb(255, 75, 50)");
+    }
+    if(scoreR > 15){
+        paddleR = new Paddle(boardWidth - paddleWidth, boardHeight / 2 - 40, paddleLength - 30, paddleWidth, "rgb(30,120,255)");
+    }else{
+        paddleR = new Paddle(boardWidth - paddleWidth, boardHeight / 2 - 40, paddleLength - scoreR * 2, paddleWidth, "rgb(30,120,255)");
+    }
 }
 
 function resetBall() {
@@ -51,15 +59,24 @@ function resetBall() {
     ballDirection = Math.round(Math.random() * 10) / 5;
     //console.log(ballDirection);
 
-    if(ballDirection > 1){
+    if (ballDirection > 1) {
         ball = new Ball(boardWidth / 2, boardHeight / 2, 2, Math.round(Math.random() * 10), ballRadius, "gold");
-    }else{
+    } else {
         ball = new Ball(boardWidth / 2, boardHeight / 2, -2, Math.round(Math.random() * 10), ballRadius, "gold");
     }
 }
 
 function clearBoard() {
-    ctx.fillStyle = "rgb(55,55,60)";
+
+
+    const c = document.getElementById("gameboard");
+    const ctx = c.getContext("2d");
+
+    const grad = ctx.createLinearGradient(0, 0, 280, 0);
+    grad.addColorStop(0, "lightblue");
+    grad.addColorStop(1, "darkblue");
+
+    ctx.fillStyle = grad;
     ctx.fillRect(0, 0, boardWidth, boardHeight);
 }
 
@@ -88,7 +105,7 @@ function nextTick() {
             draw();
             nextTick();
         }, 10
-        
+
     );
 }
 
@@ -111,7 +128,7 @@ function longerTick() {
 
             longerTick();
         }, 100
-        
+
     );
 }
 
@@ -121,6 +138,7 @@ function score(player) {
 
     updateScore();
     resetBall();
+    resetPaddles();
 }
 
 function updateScore() {
