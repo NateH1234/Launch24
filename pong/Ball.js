@@ -28,11 +28,13 @@ class Ball {
         // TOP WALL
         if (this.y - this.r < 0) {
             this.vy = Math.abs(this.vy);
+            ball.c = rgb(Math.random(255), Math.random(255), Math.random(255));
         }
 
         // BOTTOM WALL
         if (this.y + this.r > boardHeight) {
             this.vy = -1 * Math.abs(this.vy);
+            ball.c = "rgb(Math.random(255), Math.random(255), Math.random(255))";
         }
     }
 
@@ -43,6 +45,7 @@ class Ball {
         if (this.y > paddle.y + paddle.l) return false;
         if (this.vx < 0) {
             this.vx = Math.abs(this.vx);
+            ball.c = "rgb(Math.random(255), Math.random(255), Math.random(255))";
         }
         
         this.vy += paddleLDistance / 22;
@@ -56,6 +59,7 @@ class Ball {
         if (this.y > paddle.y + paddle.l) return false;
         if (this.vx > 0) {
             this.vx = -1 * Math.abs(this.vx);
+            ball.c = "rgb(Math.random(255), Math.random(255), Math.random(255))";
         }
         this.vy += paddleRDistance / 22;
         return false;

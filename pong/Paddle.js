@@ -29,10 +29,16 @@ class Paddle {
         //   Math.min() and Math.max() to limit the velocity
         //   ball.y to see where the ball is
         //   ball.vy to see where the ball is going
+        if (paddleR.y < ball.y - paddleLength/2){ //Down
+            if(paddleR.y < boardHeight - paddleLength) paddleR.y += 3;
+        } 
+        if (paddleR.y > ball.y - paddleLength/2){ //Up
+            if(paddleR.y > 0) paddleR.y -= 3;
+        } 
 
-        this.vy = 0; // Modify this line to add your own code
+         // Modify this line to add your own code
 
         // Finally, call move to move the paddle normally
-        this.move();
+        
     }
 }

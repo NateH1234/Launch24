@@ -27,6 +27,7 @@ let ballDirection;
 
 function resetGame() {
     clearInterval(intervalID);
+    clearInterval(intervalIDLonger);
     gameboard.width = boardWidth;
     gameboard.height = boardHeight;
 
@@ -49,6 +50,7 @@ function resetBall() {
     //1 or 2
     ballDirection = Math.round(Math.random() * 10) / 5;
     //console.log(ballDirection);
+
     if(ballDirection > 1){
         ball = new Ball(boardWidth / 2, boardHeight / 2, 2, Math.round(Math.random() * 10), ballRadius, "gold");
     }else{
@@ -90,9 +92,10 @@ function nextTick() {
     );
 }
 
+let intervalIDLonger;
 
 function longerTick() {
-    intervalID = setTimeout(
+    intervalIDLonger = setTimeout(
         () => {
             //Update the variables
             oldPaddleLPos = newPaddleLPos;
