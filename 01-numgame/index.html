@@ -15,18 +15,23 @@
         Guess a Number between the two<br>
         The Report will give hints<br>
         But you may have the Report lie to you sometimes >:]<br>
+        Also Murder Numbers will kill you if you guess them >:]<br>
+        But the Report will tell you if any are nearby and will NEVER lie about it<br>
         Keep going until you get the Secret Number!<br>
     </p>
-    <label id = "lblSetMin">Set Min: </label>
-    <input id = "min" type = "number">
-    <br id = "brSetUp1">
-    <label id = "lblSetMax">Set Max: </label>
-    <input id = "max" type = "number">
-    <br id = "brSetUp2">
-    <label id = "lblSetLie">Lie Chance (%): </label>
-    <input id = "lie" type = "number" min = 0 max = 100>
-    <br id = "brSetUp3">
-    <button id = "start" onclick = "startGame()">Start</button>
+    <label class = "setUp" id = "lblSetMin">Set Min: </label>
+    <input class = "setUp" id = "min" type = "number">
+    <br class = "setUp" id = "brSetUp1">
+    <label class = "setUp" id = "lblSetMax">Set Max: </label>
+    <input class = "setUp" id = "max" type = "number">
+    <br class = "setUp" id = "brSetUp2">
+    <label class = "setUp" id = "lblSetLie">Lie Chance (%): </label>
+    <input class = "setUp" id = "lie" type = "number" min = 0 max = 100>
+    <br class = "setUp" id = "brSetUp3">
+    <label class = "setUp" id = "lblSetMurderNumbers">Murder Number Amount: </label>
+    <input class = "setUp" id = "murderNumbers" type = "number" min = 0 max = 5>
+    <br class = "setUp" id = "brSetUp4">
+    <button class = "setUp" id = "start" onclick = "startGame()">Start</button>
     <label id = "lblGuess" class = "guess">Your guess: </label>
     <input id = "guess" class = "guess" type = "number">
     <button id = "btnGuess" class = "guess" onclick = "makeGuess()">Guess</button>
